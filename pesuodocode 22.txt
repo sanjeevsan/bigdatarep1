@@ -1,0 +1,191 @@
+name:sanjeev
+----------------------------------------------------------------------
+excercise :1
+begin
+numeric num1;
+numeric num2;
+numeric ans;
+display"enter the first number";
+accept num1;
+display"enter the second number";
+accept num2;
+ans=num1/num2;
+display ans;
+end
+------------------------------------------------------------------
+excercise :2
+begin
+ int kilometer;
+ long long int meter
+display "enter the kilometer";
+accept kilometer;
+meter=kilometer*1000;
+display"the converted meter is "+meter;
+end
+-------------------------------------------------------------------
+excercise :3
+
+begin 
+string username;
+display"enter the username ";
+accept username;
+display"hello"+username;
+end
+----------------------------------------------------------------------
+excercis 4
+begin
+int num1,num2,num3,num4,num5;
+int sum,avg;
+display"enter the number1 ";
+accept num1;
+display"enter the number2 ";
+accept num2;
+display"enter the number3 ";
+accept num3;
+display"enter the number4 ";
+accept num4;
+display"enter the number5 ";
+accept num5;
+sum=num1+num2+num3+num4+num5;
+avg=sum/5;
+display"the sum of number is "+sum;
+display"the average of number is "+avg;
+end
+------------------------------------------------------------------------
+excercise 5
+begin
+string item;
+string quantity;
+int rice=100;
+int butter=200;
+int cookies=20;
+
+int totalprice;
+display"enter the item ";
+accept item;
+display"enter the quantity "
+accept quantity
+if(item=="rice")
+totalprice=quantity*rice;
+else
+if(item=="butter")
+totalprice=quantity*butter;
+else
+if(item=="cookies")
+totalprice=quantity*cookies;
+display totalprice 
+end
+
+
+---------------------------------------------------------------------------
+excercise 6
+begin
+int a;
+display"enter the number "
+accept a;
+if(a % 5==0)
+display"the number is divisible ";
+else
+display"the number is not divisible";
+end
+--------------------------------------------------------------------------
+excercise 7
+begin 
+int a,b,c;
+display  "enter the first number ";
+accept a;
+display "enter the second number";
+accept b;
+display "enter the third number";
+accept c;
+if((a>b)&&(a>c))
+display a;
+else
+if((b>a)&&(b>c))
+display b;
+else
+display c;
+end 
+----------------------------------------------------------------------------
+excercise 8
+begin 
+int age ;
+dislplay "enter the age ";
+accept age ;
+if (Age >18)
+display"you are eligible to vote ";
+else
+display"you are not eligible to vote";
+end
+------------------------------------------------------------------------------
+excercise 9
+begin 
+int year ;
+display "enter the year "
+accept year ;
+if(year%400==0)
+display"leap year ";
+else
+display"nt leap year "
+}
+}
+}
+end
+-------------------------------------------------------------------------------
+excercise 10
+begin 
+int a;
+display"1.briyani\n 2.parotto\n 3.veg briyani \n 4.idli \n"
+display"enter the menu selection "
+accept a;
+switch(a);
+case 1:display"you have selected briyani price is 100rs";
+break;
+case 2:display"you have selected paraotto price is 50rs";
+break;
+case 3:display"you have selected veg briyani price is 25rs";
+break;
+case 4:display"yo have selected idli price is 4rs";
+break;
+default :display"wrong selection ";
+end
+
+----------------------------------------------------------------------------------
+excercise 11
+begin
+display"1.theri \n 2.ghilli \n 3.thuppaki \n 4. kaththi \n"
+int num;
+display"enter the num ";
+accept num;
+switch(num)
+{
+case 1: display"theri \n 2 hrs \n atlee";
+break;
+case 2:display"ghilli \n 2hrs \n dharani ";
+break;
+case 3: display"thuppaki \n 2hrs \n ar ";
+break;
+case 4: display"kaththi \n 2hrs \n ar ";
+break 
+default : display"invalid option ";
+}
+end
+------------------------------------------------------------------------------------
+excercise 12
+begin 
+string dir;
+display"enter the direction "
+accept dir ;
+switch (dir)
+{
+case "up" display"north";
+break;
+case "down" display"south";
+break;
+case "right" display"east";
+break;
+case "left" display"west";
+break;
+end
+------------------------------------------------------------------------
+
