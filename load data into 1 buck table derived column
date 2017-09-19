@@ -1,0 +1,3 @@
+Load data into partition table (single bucket) using a derived partition column
+------------------------------------------------------------------------------------
+from txnrecords txn INSERT OVERWRITE TABLE txnrecsByCat3 PARTITION(month) select txn.txnno, txn.txndate,txn.custno, txn.amount,txn.product,txn.city,txn.state, txn.spendby, txn.category, substring(txn.txndate,1,2) as month DISTRIBUTE By substring(txndate,1,2);

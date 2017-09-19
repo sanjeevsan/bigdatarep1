@@ -1,0 +1,10 @@
+Load the data without header
+--------------------------------
+create table employee_header(empno INT, empname STRING, salary bigint)
+row format delimited
+fields terminated by ','
+stored as textfile
+tblproperties("skip.header.line.count"="1");
+	
+
+// Always skips first row in the actual load file

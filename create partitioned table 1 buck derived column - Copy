@@ -1,0 +1,8 @@
+Create partitioned table (single bucket) on a derived column
+----------------------------------------------------------------
+create table txnrecsByCat3(txnno INT, txndate STRING, custno INT, amount DOUBLE,
+category string, product STRING, city STRING, state STRING, spendby STRING)
+partitioned by (month string)
+row format delimited
+fields terminated by ','
+stored as textfile;
