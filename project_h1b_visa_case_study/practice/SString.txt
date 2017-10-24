@@ -1,0 +1,21 @@
+Accept a string as input and check whether the third character is 's' or not.
+
+import java.util.Scanner;
+public class String {
+	public static void main(String[] args) {
+		String str;
+		Scanner sin = new Scanner(System.in);
+	 	System.out.println("enter the string");
+		str = sin.next();
+		char[] s1;
+		s1=str.toCharArray();
+		if(s1[2]=='s' || s1[2]=='S')
+		{
+		System.out.println("entered string has s in third position");
+		}
+		else
+		{
+		System.out.println("Entered string doesnt contains s at third position");
+		}
+	}
+}

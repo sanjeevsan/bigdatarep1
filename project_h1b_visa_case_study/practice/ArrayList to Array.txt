@@ -1,0 +1,44 @@
+package Arraydemo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+			//This program is to convert ArrayList to Array
+public class Singledemo {
+
+	public static void main(String[] args) {
+		ArrayList obj1 = new ArrayList();
+		obj1.add(1133); 			// register number
+		obj1.add("myname");		   //here is myname
+		obj1.add(6.50); 		  // here is my cgpa
+		
+		// Here ArrayList will be Displayed
+		
+		System.out.println(obj1);
+		System.out.println("");
+		
+		// Logic to convert ArrayList will be converted into Array
+		
+	/*	int arrsize = obj1.size(); 	 // finding size of ArrayList
+		
+		for(int i=0;i<arrsize;i++) {
+			
+			System.out.println("Values from ArrayList \t"+obj1.get(i));
+		}																	*/
+			// using iterator
+	/*	Iterator itr = obj1.iterator();
+		while(itr.hasNext())
+		{
+			Object val = itr.next();
+			System.out.println("Values from ArrayList" +val);
+		}															*/
+		// using enhanced forloop
+		for(Object val:obj1)
+		{
+			System.out.println("Values from ArrayList" +val);
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+package javaapplication1;
+
+import java.util.Scanner;
+public class JavaApplication1 {
+
+    
+    public static void main(String[] args) {
+        String b1,b2;
+        System.out.println("enter the string");
+    Scanner ss=new Scanner(System.in);
+    b1=ss.next();
+    b2=ss.next();
+    char[] r1;
+    char[] r2;
+  //  int a = b1.length();
+  //  int b = b2.length();
+    r1=b1.toCharArray();
+    r2=b2.toCharArray();
+        for(int i=0;i<r1.length;i++){
+            for(int j=0;j<r2.length;j++){
+    if(r1[i]==r2[j]){
+    System.out.println(r1[i]);
+    }
+            }
+    }
+        
+    }
+    
+}

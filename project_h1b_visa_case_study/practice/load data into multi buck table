@@ -1,0 +1,5 @@
+Load data into partition table (with multiple buckets)
+---------------------------------------------------
+from txnrecords txn INSERT OVERWRITE TABLE txnrecsByCat2 PARTITION(category) select txn.txnno, txn.txndate,txn.custno, txn.amount,txn.product,txn.city,txn.state, txn.spendby, txn.category DISTRIBUTE By category;
+
+

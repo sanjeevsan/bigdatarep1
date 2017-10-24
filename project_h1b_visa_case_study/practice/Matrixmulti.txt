@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Matrixmulti{
+	
+	    public static void main(String[] args) 
+	    {
+	    	Scanner s = new Scanner(System.in);
+	        System.out.println("enter the number of rows in first matrix");
+	        int r1=s.nextInt();
+	        System.out.println("enter the number of rows in second matrix");
+	        int r2=s.nextInt();
+	        System.out.println("enter the number of column in first matrix");
+	        int c1=s.nextInt();
+	        System.out.println("enter the number of column in second matrix");
+	        int c2=s.nextInt();
+	        if(r1==r2 &&c1==c2){
+	        	int a[][]=new int[r1][c1];
+	        	int b[][]=new int[r2][c2];
+	        	int c[][]=new int[r2][c2];
+	        	System.out.println("Enter the entry for first matrix");
+	        	for(int i=0;i<r1;i++){
+	        		for(int j=0;j<c1;j++){
+	        			a[i][j]=s.nextInt();
+	        		}
+	        	}
+	        	System.out.println("Enter the entry for second matrix");
+	        	for(int i=0;i<r2;i++){
+	        		for(int j=0;j<c2;j++){
+	        			b[i][j]=s.nextInt();
+	        		}
+	        	}
+	        	System.out.println("Before addtion first matrix");
+	        	for(int i=0;i<r1;i++){
+	        		for(int j=0;j<c1;j++){
+	        			System.out.print(a[i][j]+" ");
+	        		}System.out.println();
+	        	}
+	        	System.out.println("before addtion second matrix");
+	        	for(int i=0;i<r1;i++){
+	        		for(int j=0;j<c1;j++){
+	        			System.out.print(b[i][j]+" ");
+	        		}System.out.println();
+	        	}
+	        	System.out.println("after addition");
+	        	for(int i=0;i<r1;i++)
+	        	{
+	        		for(int j=0;j<c1;j++)
+	        		{
+	        			for(int k=0;k<c2;k++){
+	        				c[i][j]=a[i][j]+b[i][j];
+	        			}
+	        		}
+	        	}
+	        	for(int i=0;i<r1;i++){
+	        		for(int j=0;j<c1;j++){
+	        			System.out.print(c[i][j]+" ");
+	        		}System.out.println();
+	        	}
+	        }
+	        
+	        		
+	        	
+	        
+	       s.close();
+	    }
+}

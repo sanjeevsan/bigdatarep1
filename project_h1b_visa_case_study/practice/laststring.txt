@@ -1,0 +1,16 @@
+Display last character of a string without direct string functions.
+
+import java.util.Scanner;
+public class Last {
+
+       public static void main(String[] args) {
+       String str;
+       Scanner sin = new Scanner(System.in);
+       System.out.println("enter the string");
+       str = sin.next();
+       int l=str.length();
+       char[] s2=str.toCharArray();
+       System.out.println(s2[l-1]);
+      
+    }
+ }

@@ -1,0 +1,8 @@
+create table totalcount(total bigint)
+row format delimited
+fields terminated by ',';
+
+insert overwrite table totalcount
+select count(case_status) from h1b_final;
+
+select a.case_status,count(a.case_status) as case_count,round((count(a.case_status)/total*100),2) as case_percent from h1b_final a,totalcount b group by a.case_status,b.total;

@@ -1,0 +1,29 @@
+Find the greatest of three numbers. three numbers should accepted from user and use only conditions.
+
+import java.util.Scanner;
+public class greatest {
+
+    
+    public static void main(String[] args) {
+        int a,b,c;
+        Scanner sin = new Scanner(System.in);
+        System.out.println("Enter the first value");
+        a = sin.nextInt();
+        System.out.println("Enter the second valuae");
+        b = sin.nextInt();
+        System.out.println("Enter the third value");
+        c = sin.nextInt();
+        if(a>b && a>c){
+        System.out.println("First value is largerrrr");
+        }
+        else if(b>a && b>c){
+        System.out.println("Second value is largerrrr");
+        }
+        else if(c>a && c>b){
+        System.out.println("Third value is largerrrr");
+        }
+        else{        
+	System.out.println("All are equal");
+		} 
+    }
+    }

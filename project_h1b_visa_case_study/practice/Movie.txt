@@ -1,0 +1,62 @@
+Accept movies details like movieid,moviename,actorname,directorname,yearofrelease,language,totalincome,rating(1-5),duration
+Analysis :
+total number of movies released
+total income of all movie
+total movies of rating>=4
+total movieslanguage wise
+toal movie with duration >1.5 hours
+total movies with director name "john d"
+
+import java.util.*
+public class Movie
+
+int i=1,rating,year;
+String duration,movieid,moviename,actorname,directorname,language;
+float income;
+Scanner sin=new Scanner(System.in);
+
+do{
+System.out.println("movieid");
+movieid = sin.next();
+System.out.prinln("moviename");
+moviename=sin.next();
+System.out.prinln("actorname");
+actorname=sin.next();
+System.out.prinln("director name");
+directorname=sin.next();
+System.out.prinln("year of release");
+year=sin.nextInt();
+System.out.prinln("language");
+language=sin.next();
+System.out.prinln("income");
+income=sin.nextfloat();
+System.out.prinln("rating");
+rating=sin.nextInt();
+System.out.prinln("duration");
+duration=sin.next();
+}while(i<6;)
+{
+String movieid,moviename;
+int totinc,countmovie,sumtot;
+String choice='Y';
+Scanner s=new Scanner(System.in);
+public void mvdet(){
+do{
+System.out.println("enter id");
+movieid=s.next();
+System.out.println("enter movie name");
+movieid=s.next();
+System.out.println("enter income");
+movieid=s.nextInt();
+countmovie=countmovie+1;
+sumtot=sumtot+totinc;
+System.out.println("enter your choice");
+choice=s.next();
+}while(choice=='N')
+System.out.println("total movie" +countmovie);
+System.out.println("total income" +sumtot);
+}
+public static void main(String[] args){
+s.mvdet();
+}
+}

@@ -1,0 +1,4 @@
+Load the data into the table (from local file system)
+-----------------------------------------------------
+LOAD DATA LOCAL INPATH '/home/hduser/txns1.txt' OVERWRITE INTO TABLE txnrecords;
+

@@ -1,0 +1,19 @@
+Find a number is odd or even.
+
+import java.util.Scanner;
+public class evenodd {
+	public static void main(String[] args) {
+		int number;
+		Scanner eve = new Scanner(System.in);
+	 	System.out.println("enter the number");
+		n = eve.nextInt();
+		if(n%==0)
+		{
+		System.out.println("Number is even");
+		}   
+		else
+		{
+		System.out.println("Number is odd");
+		}
+	}
+}

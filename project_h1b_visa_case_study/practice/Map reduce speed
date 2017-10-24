@@ -1,0 +1,76 @@
+import java.io.*;
+
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.conf.*;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.mapreduce.lib.input.*;
+import org.apache.hadoop.mapreduce.lib.output.*;
+
+
+
+
+public class speed {
+	public static class speedmap extends Mapper<LongWritable,Text,Text,LongWritable>
+	   {
+	      public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException
+	      {
+	    	  try{
+		            String[] str = value.toString().split(",");
+		            long lng = Long.parseLong(str[1]);
+		            
+		            context.write(new Text(str[0]),new LongWritable(lng));
+		         }
+	         catch(Exception e)
+	         {
+	            System.out.println(e.getMessage());
+	         }
+	      }
+	      
+	   }
+	public static class speedred extends Reducer<Text,LongWritable,Text,DoubleWritable>
+	   {
+		   	
+		DoubleWritable result = new DoubleWritable();
+		    
+		    public void reduce(Text key, Iterable<LongWritable> values,Context context) throws IOException, InterruptedException {
+		     double count=0;
+		      double totcount=0;
+				
+		         for (LongWritable val : values)
+		         {       	
+		        	if(val.get()>65)
+		        	{
+		        	count++;
+		        	}
+		        	totcount++;
+		         }
+		        
+		        double percen=(count/totcount)*100;
+		         
+		      result.set(percen);		      
+		      context.write(key, result);
+		      
+		      
+		    }
+   
+	   }
+
+	 public static void main(String[] args) throws Exception {
+		    Configuration conf = new Configuration();
+		    
+		    Job job = Job.getInstance(conf, "Offence percentage count");
+		    job.setJarByClass(speed.class);
+		    job.setMapperClass(speedmap.class);
+		    //job.setCombinerClass(ReduceClass.class);
+		    job.setReducerClass(speedred.class);
+		  //  job.setNumReduceTasks(2);
+		    job.setMapOutputKeyClass(Text.class);
+		    job.setMapOutputValueClass(LongWritable.class);
+		    job.setOutputKeyClass(Text.class);
+		    job.setOutputValueClass(DoubleWritable.class);
+		    FileInputFormat.addInputPath(job, new Path(args[0]));
+		    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+		    System.exit(job.waitForCompletion(true) ? 0 : 1);
+		  }
+}

@@ -1,0 +1,5 @@
+mysql -u root -p'1234' -e 'drop database project;create database if not exists project;use project;create table q10(job_title varchar(100),success_rate float,petitions int);';
+
+sqoop export --connect jdbc:mysql://localhost/project --username root --password '1234' --table q10 --update-mode allowinsert  --export-dir /user/hive/ten1/p* --input-fields-terminated-by ',' 
+
+mysql -u root -p'1234' -e 'select * from project.q10';

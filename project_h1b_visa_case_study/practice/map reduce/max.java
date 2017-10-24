@@ -1,0 +1,114 @@
+
+import java.io.IOException;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.FloatWritable;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.NullWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+
+
+
+public class max {
+	public static class MapClass extends Mapper<LongWritable,Text,Text,Text>
+	
+	{
+		String value="all";
+		public void map(LongWritable key,Text value,Context context)
+		{
+			try
+			{
+			String[] str =value.toString().split(",");
+			
+			String city=new String(str[3]);
+			String rating=new String(str[2]);
+             String myvalue=city + "," + rating;
+             
+			context.write(new Text(this.value), new Text(myvalue));
+			
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+			
+			
+		}
+		
+	}
+
+	public static class ReduceClass extends Reducer<Text,Text,NullWritable,Text>
+	{
+		public void reduce(Text key,Iterable<Text> value,Context context)
+		{
+			
+			int max=0;
+	        String name=" ";
+			
+			IntWritable result=new IntWritable();
+			
+			try
+			{
+			for(Text val:value)
+				
+			{
+				
+				String[] a=val.toString().split(",");
+				String city=new String(a[0]);
+				String num=new String(a[1]);
+				int num1=Integer.parseInt(num);
+			
+			if(num1 > max)
+				{
+					max=num1;
+					name=city;
+				
+					
+				}
+			}	
+				String myval1=String.format("%d", max);
+				String myval2=myval1+name;
+				context.write(NullWritable.get(), new Text(myval2));
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+				
+				
+			}
+			
+			
+			
+			
+			
+		
+	}
+	 public static void main(String[] args) throws Exception {
+		    Configuration conf = new Configuration();
+		    //conf.set("name", "value")
+		    //conf.set("mapreduce.input.fileinputformat.split.minsize", "134217728");
+		    Job job = Job.getInstance(conf, "Volume Count");
+		    job.setJarByClass(max.class);
+		    job.setMapperClass(MapClass.class);
+		    //job.setCombinerClass(ReduceClass.class);
+		    job.setReducerClass(ReduceClass.class);
+		    job.setNumReduceTasks(1);
+		    job.setMapOutputKeyClass(Text.class);
+		    job.setMapOutputValueClass(Text.class);
+		    job.setOutputKeyClass(NullWritable.class);
+		    job.setOutputValueClass(Text.class);
+		    FileInputFormat.addInputPath(job, new Path(args[0]));
+		    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+		    System.exit(job.waitForCompletion(true) ? 0 : 1);
+
+}
+}

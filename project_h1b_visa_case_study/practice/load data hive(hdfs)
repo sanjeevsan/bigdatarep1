@@ -1,0 +1,3 @@
+Load the data into the table (from hdfs system)
+-----------------------------------------------------
+LOAD DATA INPATH '/project/txns1.txt' OVERWRITE INTO TABLE txnrecords;

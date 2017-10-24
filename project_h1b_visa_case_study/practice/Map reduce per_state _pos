@@ -1,0 +1,74 @@
+import java.io.IOException;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class movie {
+	public static class momap extends Mapper<LongWritable,LongWritable,LongWritable,LongWritable>
+	{
+		public void map(LongWritable key,LongWritable value,Context context) throws IOException, InterruptedException
+		{
+			LongWritable key1 = new LongWritable();
+			LongWritable value1 = new LongWritable();
+			
+			try
+			{
+				String[] arg = value.toString().split(",");
+				long mvnm = Long.parseLong(arg[1]);
+				  long mvyr=Long.parseLong(arg[2]);
+				key1.set(mvnm);
+				value1.set(mvyr);
+				context.write(key1,value1);
+				//key1 is movie name
+				//value1 is movie year
+			} 
+			catch(Exception e){
+				
+			}
+		}
+	}
+	public static class mored extends Reducer<LongWritable,LongWritable,LongWritable,LongWritable>
+	{
+		public void reduce(LongWritable tx,Iterable<LongWritable> ni,Context context) throws IOException, InterruptedException{
+			LongWritable result= new LongWritable();
+			long aa=0;
+			int count=0;
+			for(LongWritable a1 : ni)
+			{
+			aa=a1.get();
+			if((aa>=1945)&&(aa<=1959))
+			{
+				count=count+1;
+			}
+			
+			}
+			result.set(count);
+			context.write(tx,result);
+			}
+		
+		}
+	public static void main(String[] args) throws Exception {
+	    Configuration conf = new Configuration();
+	    
+	    Job job = Job.getInstance(conf, "Offence percentage count");
+	    job.setJarByClass(movie.class);
+	    job.setMapperClass(momap.class);
+	    // job.setCombinerClass(avgred.class);
+	    job.setReducerClass(mored.class);
+	    job.setNumReduceTasks(1);
+	    job.setMapOutputKeyClass(LongWritable.class);
+	    job.setMapOutputValueClass(LongWritable.class);
+	    job.setOutputKeyClass(LongWritable.class);
+	    job.setOutputValueClass(LongWritable.class);
+	    FileInputFormat.addInputPath(job, new Path(args[0]));
+	    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+	    System.exit(job.waitForCompletion(true) ? 0 : 1);
+	  }	
+}		
+
+

@@ -1,0 +1,32 @@
+Create four functions for addition,subtract,multiply,and divide.
+
+import java.util.*
+public class functions(){
+public void main(String[] args) {
+
+public int add(int a,int b)
+{
+int c=a+b;
+return c;
+}
+public int sub(int a,int b)
+{
+int c=a-b;
+return c;
+}
+public int mul(int a,int b)
+{
+int c=a*b;
+return c;
+}
+public int div(int a,int b)
+{
+int c=a/b;
+return c;
+}
+add(1,2);
+sub(5,8);
+mul(10,20);
+div(50,10);
+}
+}

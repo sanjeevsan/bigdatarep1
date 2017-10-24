@@ -1,0 +1,245 @@
+---------------------EXERCISE-1-------------------------
+BEGIN
+	integer first_number;
+	integer second_number;
+	integer third_number;
+	
+	Display"Enter the first number";
+	Accept first_number;
+
+	Display"Enter the second number";
+	Accept second_number;
+	
+	third_number=first_number / second_number;
+	
+	Display"Third number is"third_number ;
+END
+
+
+---------------------EXERCISE-2--------------------------
+BEGIN
+	float kilometer;
+	integer meters;
+	
+	Display"Enter the Kilometer";
+	Accept kilometer;
+	
+	meters=kilometer*1000;
+	
+	Display" In Meters" meters;
+END
+
+
+---------------------EXERCISE-3--------------------------
+BEGIN
+	string user_name;
+	
+	Display" Enter the user name";
+	Accept user_name;
+
+	Display"Hello ",user_name;
+END
+
+
+--------------------EXERCISE-4---------------------------	
+BEGIN
+		INTEGER first_number,second_number, third_number,fourth_number, fifth_number,sum;
+		
+		FLOAT average;
+
+	Display" Enter the five numbers with using enter";
+	
+	Accept first_number;
+	Accept second_number;
+	Accept third_number;
+	Accept fourth_number;
+	Accept fifth_number;
+
+	sum=first_number + second_number + third_number + fourth_number + fifth_number;
+
+	average=sum / 5;
+	
+	Display"sum is ",sum;
+	Display"average is ",average;
+END
+
+----------------------EXERCISE-5------------------------- 
+BEGIN
+	STRING item_number;
+	INTEGER quantity;
+	FLOAT price,total_price;
+	
+	Assume price=250.0;
+
+	Display" enter the product/item number";
+	Accept item_number;
+	
+	Display" enter the quantity of items";
+	Accept quantity;
+		
+	total_price=quantity * price;
+	
+	Display" Total price is ",total_price;
+END
+
+----------------------EXERCISE-6-------------------------	
+BEGIN
+	INTEGER number_1,number_2;
+	
+	Display"enter the number";
+	Accept number_1;
+	
+	number_2 = number_1 / 5;  
+	
+	if(number_2 == 0)
+	begin
+		Display"IS DIVISIBLE";
+	end
+	
+	else
+	begin
+		Display"NOT DIVISIBLE";
+	end
+END
+
+---------------------EXERCISE-7--------------------------
+BEGIN
+	INTEGER number_1,number_2,number_3;
+	
+	Display"enter the three numbers";
+	Accept number_1;
+	Accept number_2;
+	Accept number_3;
+
+	if((number_1 > number_2) && (number_1 > number_3))
+	begin
+		Display"number1 is greater";
+	end
+	else if(number_2 > number_3)
+	begin
+		Display"number2 is greater";
+	end
+	else
+	begin
+		Display"number3 is greater";
+	end
+END
+
+---------------------EXERCISE-8--------------------------
+BEGIN
+	INTEGER age;
+		
+	Display"Enter the age";
+	Accept age;
+
+	if(age >= 18)
+	begin
+		Display" you are eligible to vote";
+	end
+	else
+	begin
+		Display" you are not eligible to vote";
+	end
+END
+
+-------------------EXERCISE-9----------------------------
+BEGIN
+	INTEGER year;
+	
+	Display"Enter the year";
+	Accept year;
+	
+	if(year % 4 ==0)
+	begin
+		if(year % 100==0)
+		
+		begin
+		Display"year is leap year";
+		end
+		break;
+	else
+	begin
+	Display"year is not leap year";
+	end	
+		
+END
+
+----------------------EXERCISE-10------------------------
+BEGIN
+	INTEGER b;
+	
+	Display"MENU DISPLAY";
+	Display"1 is abc";
+	Display"2 is abd";
+	Display"3 is abe";
+	Display"4 is abf";
+	Display"5 is abg";
+	
+	Display"Enter the menu";
+switch(b)
+case 1:
+		Display"abc is 10";
+case 2:
+		Display"abd is 20";
+case 3:
+		Display"abe is 30";
+case 4:
+		Display"abf is 40";
+case 5:
+		Display"abg is 50";
+default:
+		Display"Wrong selection";
+break;
+
+END
+--------------------EXERCISE-11--------------------------
+BEGIN        
+	INTEGER c;
+	
+	Display"MOVIE LIST";
+	Display"1 is movie1";
+	Display"2 is movie2";
+	Display"3 is movie3";
+	Display"4 is movie4";
+	Display"5 is movie5";
+	
+	Display"Enter the selection";
+switch(c)
+case 1:
+		Display"1:12:22,act1,jms";
+case 2:
+		Display"2:15:45,act2,dfd";
+case 3:
+		Display"1:45:30,act3,fjv"";
+case 4:
+		Display"1:10:56,act4,jki";
+case 5:
+		Display"3:00:01,act5,jms";
+default:
+		Display"Enter a Valid option";
+break;
+------------------EXERCISE-12----------------------------
+BEGIN
+	STRING d[50];
+	
+	Display"DIRECTIONS";
+	Display"up";
+	Display"down";
+	Display"right";
+	Display"left";
+		
+	Display"Enter the selection";
+switch(d)
+case up:
+		Display"north";
+case down:
+		Display"south";
+case right:
+		Display"east";
+case left:
+		Display"west";
+default:
+break;
+
+END
+	

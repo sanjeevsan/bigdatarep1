@@ -1,0 +1,30 @@
+package Arraydemo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Singledemo {
+
+	public static void main(String[] args) {
+		ArrayList obj1 = new ArrayList();
+		obj1.add(1133); 			// register number
+		obj1.add("myname");		   //here is myname
+		obj1.add(6.50); 		  // here is my cgpa
+		
+		// Here ArrayList will be Displayed
+		
+		System.out.println(obj1);
+		System.out.println("");
+		
+	// using iterator
+		Iterator itr = obj1.iterator();
+		while(itr.hasNext())
+		{
+			Object val = itr.next();
+			System.out.println("Values from ArrayList" +val);
+		}															
+		
+		
+	}
+
+}

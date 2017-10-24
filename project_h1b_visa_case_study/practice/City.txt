@@ -1,0 +1,73 @@
+Accept the details from the user and display the numberof peoples in the particular city
+
+import java.util.Scanner;
+
+
+public class City {
+
+   
+    public static void main(String[] args) {
+        City obj=new City();
+        
+      obj.getdata();
+      
+       
+      
+    }
+    
+    void getdata()
+    {
+       String name;
+       String city;
+       String ans;
+       int chn=0;
+        int mum=0;
+        int bang=0;
+        int kol=0;
+        int hyd=0;
+       
+       
+       System.out.println("Do youwant enter the details type yes or no.. ");
+       Scanner sin=new Scanner(System.in);
+       ans=sin.next();
+       while("yes".equals(ans))
+       {
+           System.out.println("enter the name");
+           name=sin.next();
+           
+           System.out.println("Enter the city");
+           city=sin.next();
+          
+            switch (city) {
+            case "chennai":
+                chn=chn+1;
+                break;
+            case "mumbai":
+                mum=mum+1;
+                break;
+            case "banglore":
+                bang=bang+1;
+                break;
+            case "kolkatta":
+                kol=kol+1;
+                break;
+            case "hydrabad":
+                hyd=hyd+1;
+                break;
+            }
+ 
+            System.out.println("Do you want to continue..?");
+            ans=sin.next();
+                
+           
+           
+       }
+            System.out.println("The number of peoples belongs to chennai is "+chn);
+            System.out.println("The number of peoples belongs to mumbai is "+mum);
+            System.out.println("The number of peoples belongs to bangalore is "+bang);
+            System.out.println("The number of peoples belongs to kolkatta is "+kol);
+            System.out.println("The number of peoples belongs to hydrabad is "+hyd);
+    }
+    
+    
+}

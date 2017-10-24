@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Gcd {
+public void gcd(int num1,int num2) {
+	Scanner sc = new Scanner(System.in);
+		int numerator,denominator;
+	if(num1 > num2) {
+		numerator=num1;
+		denominator=num2;
+	}
+	else {
+		numerator=num2;
+		denominator=num1;
+	}
+	int remainder=numerator % denominator;
+	while(remainder!=0) {
+		numerator = denominator;
+		denominator = remainder;
+		remainder = numerator % denominator;
+	}
+	System.out.println("Gcd is"+denominator);
+	System.out.println("LCM for the number");
+	int lcm=(num1*num2)/denominator;
+	System.out.println("Lcm is"+lcm);
+}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Gcd grt = new Gcd();
+		System.out.println("Enter the value's of N1 and N2 ");
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		grt.gcd(n1,n2);
+		
+	}
+}

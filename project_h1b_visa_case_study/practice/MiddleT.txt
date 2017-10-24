@@ -1,0 +1,25 @@
+Accept input from user and check whether the middle character of a string is t/T or not.
+
+import java.util.Scanner;
+public class Tchar {
+   
+    public static void main(String[] args) {
+       String str;
+       Scanner sin = new Scanner(System.in);
+       System.out.println("enter the string");
+       str = sin.next();
+       int a = str.length();
+       char[] r=str.toCharArray();
+       int b=a/2;
+       System.out.println("Middle Character index is " +b);
+       if(r[b]=='t' || r[b]=='T')
+       {
+       System.out.println("Middle character is t");
+       }
+       else
+       {
+       System.out.println("Middle character is not t");
+       }
+    }
+    
+}

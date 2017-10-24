@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Decitobinar{
+	
+	    public static void main(String[] args) 
+	    {
+	        int n, count = 0,count1=0, a;
+	        String x = "";
+	        Scanner s = new Scanner(System.in);
+	        System.out.print("Enter any decimal number:");
+	        n = s.nextInt();
+	        while(n > 0)
+	        {
+	            a = n % 2;
+	            if(a == 1)
+	            {
+	                count++;
+	            }
+	            if(a==0)
+	            {
+	            count1++;
+	            }
+	            x = x  + a;
+	            n = n / 2;
+	        }
+	        char[] ch=x.toCharArray();
+	        System.out.print("The binary number is \t");
+	        for(int i=ch.length-1;i>=0;i--){
+	        System.out.print(ch[i]);}
+	        System.out.println();
+	        System.out.println("No. of 0s:"+count1);
+	        System.out.println("No. of 1s:"+count);
+	        s.close();
+	    }
+}

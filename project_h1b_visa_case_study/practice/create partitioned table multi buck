@@ -1,0 +1,9 @@
+Create partitioned table (with multiple buckets)
+--------------------------------------------------
+create table txnrecsByCat2(txnno INT, txndate STRING, custno INT, amount DOUBLE,
+product STRING, city STRING, state STRING, spendby STRING)
+partitioned by (category STRING)
+clustered by (state) into 10 buckets
+row format delimited
+fields terminated by ','
+stored as textfile;

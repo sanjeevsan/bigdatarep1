@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Reverse {
+
+  
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int num,sum=0,rem=0;
+        Scanner reve = new Scanner(System.in);
+        System.out.println("Enter the number to be reversed");
+        num=reve.nextInt();
+        while(num!=0)
+        {
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+        }
+        System.out.println("reversed string is" +sum);
+    }
+    
+    
+}
